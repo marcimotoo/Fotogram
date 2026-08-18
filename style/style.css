@@ -20,29 +20,38 @@ header {
   display: flex;
   align-items: center;
 }
+.header img {
+  height: 40px;
+}
 
 main {
   background: var(--bg-color);
-  padding: 160px max(calc(50% - 720px), 160px);
+  padding: 0px max(calc(50% - 720px), 0px);
   color: white;
   display: flex;
   flex-direction: column;
   gap: 160px;
+  padding-top: 160px;
+  padding-bottom: 160px;
 }
 main img {
   height: 150px;
   width: 150px;
+  object-fit: cover;
   border-radius: 16px;
   border: 2px solid rgba(18, 70, 88, 1);
   transition: all 160ms ease-in-out;
+  margin-bottom: 48px;
 }
 main img:hover {
   border: 2px solid rgb(21, 171, 221);
 }
 .foto_section {
   display: flex;
+  justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
+  padding: 0 140px;
 }
 
 footer {
