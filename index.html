@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
+    <div class="blur_bg"></div>
     <header>
       <div class="header">
         <img src="./assets/icons/fotogram_text_logo.svg" alt="" />
@@ -19,7 +20,19 @@
     </header>
     <main>
       <h1>Your personal photo album</h1>
-      <section class="foto_section">
+      <section id="foto_section">
+        <div class="big_foto_mode">
+          <div class="img_info">
+            <p>Alaska-810433_1280</p>
+            <button class="close_button"><img src="./assets/icons/close.svg" alt="" /></button>
+          </div>
+          <img src="./assets/images/buitymounten.jpg" alt="" />
+          <div class="back_forward">
+            <button class="arrow_button"><img src="./assets/icons/left.svg" alt="" /></button>
+            <p>1/12</p>
+            <button class="arrow_button"><img src="./assets/icons/right.svg" alt="" /></button>
+          </div>
+        </div>
         <img onclick="openImgWindow()" src="./assets/images/buitymounten.jpg" alt="" />
         <img onclick="openImgWindow()" src="./assets/images/cityanime.jpg" alt="" />
         <img onclick="openImgWindow()" src="./assets/images/clouds.png" alt="" />
