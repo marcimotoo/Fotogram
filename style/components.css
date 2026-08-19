@@ -29,6 +29,9 @@
 .close_button:hover {
   background: var(--button-hover);
 }
+.close_button:active {
+  background: var(--button-press);
+}
 
 .arrow_button {
   appearance: none;
