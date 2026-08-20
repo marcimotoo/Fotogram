@@ -70,7 +70,7 @@ function getFotoSectionTemplate(i) {
   </button>`;
 }
 function getBigPictureTemplate(i) {
-  return `<div class="big_foto_mode">
+  return `<article class="big_foto_mode">
     <div class="img_info">
       <h2 id="dialogTitle">${imgObjects[i].title}</h2>
       <button aria-label="Dialog closed" onclick="closeDialog()" class="close_button">
@@ -89,7 +89,7 @@ function getBigPictureTemplate(i) {
         <img src="./assets/icons/right.svg" alt="right button arrow" />
       </button>
     </div>
-  </div>`;
+  </article>`;
 }
 
 function init() {
