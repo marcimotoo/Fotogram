@@ -92,8 +92,8 @@ function getBigPictureTemplate(i) {
   </article>`;
 }
 
+const contentRef = document.getElementById("foto_section");
 function init() {
-  let contentRef = document.getElementById("foto_section");
   for (let i = 0; i < imgObjects.length; i++) {
     contentRef.innerHTML += getFotoSectionTemplate(i);
   }
