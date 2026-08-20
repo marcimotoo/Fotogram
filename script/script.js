@@ -1,4 +1,5 @@
-// script the logic baby
+const dialogRef = document.getElementById("dialog_section");
+const contentRef = document.getElementById("foto_section");
 const imgObjects = [
   {
     src: "./assets/images/buitymounten.jpg",
@@ -61,16 +62,18 @@ const imgObjects = [
     alt: "Tree covered in white snow",
   },
 ];
-// ${imgObjects[i].src}
-// ${imgObjects[i].title}
-// ${imgObjects[i].alt}
+
 function getFotoSectionTemplate(i) {
-  return `<button class="imgButton" aria-haspopup="dialog" aria-controls="foto_section" onclick="openDialog(${i})">
+  return /*html*/ `
+    <button class="imgButton" aria-haspopup="dialog" aria-controls="foto_section" onclick="openDialog(${i})">
     <img src="${imgObjects[i].src}" alt="${imgObjects[i].alt}"/>
-  </button>`;
+  </button>
+  `;
 }
+
 function getBigPictureTemplate(i) {
-  return `<article class="big_foto_mode">
+  return /*html*/ `
+    <article class="big_foto_mode">
     <div class="img_info">
       <h2 id="dialogTitle">${imgObjects[i].title}</h2>
       <button aria-label="Dialog closed" onclick="closeDialog()" class="close_button">
@@ -81,40 +84,53 @@ function getBigPictureTemplate(i) {
     <img src="${imgObjects[i].src}" alt="${imgObjects[i].alt}" />
     </div>
     <div class="back_forward">
-      <button onclick="back_button(${i - 1})" class="arrow_button">
+      <button onclick="backButton(${i})" class="arrow_button">
         <img src="./assets/icons/left.svg" alt="left button arrow" />
       </button>
       <p>${i + 1}/12</p>
-      <button onclick="foward_button(${i + 1})" class="arrow_button">
+      <button onclick="fowardButton(${i})" class="arrow_button">
         <img src="./assets/icons/right.svg" alt="right button arrow" />
       </button>
     </div>
-  </article>`;
+  </article>
+  `;
 }
 
-const contentRef = document.getElementById("foto_section");
 function init() {
   for (let i = 0; i < imgObjects.length; i++) {
     contentRef.innerHTML += getFotoSectionTemplate(i);
   }
 }
 
-const dialogRef = document.getElementById("dialog_section");
-function openDialog(i) {
-  dialogRef.showModal();
+function getBigPicture(i) {
   dialogRef.innerHTML = getBigPictureTemplate(i);
 }
+
+function openDialog(i) {
+  dialogRef.showModal();
+  getBigPicture(i);
+}
+
 function closeDialog() {
   dialogRef.close();
 }
 
-function back_button(i) {
-  if (i >= 0) {
-    dialogRef.innerHTML = getBigPictureTemplate(i);
+function backButton(i) {
+  if (i > 0) {
+    i--;
+    getBigPicture(i);
+  } else {
+    i = 11;
+    getBigPicture(i);
   }
 }
-function foward_button(i) {
-  if (i <= 11) {
-    dialogRef.innerHTML = getBigPictureTemplate(i);
+
+function fowardButton(i) {
+  if (i < imgObjects.length - 1) {
+    i++;
+    getBigPicture(i);
+  } else {
+    i = 0;
+    getBigPicture(i);
   }
 }

@@ -1,22 +1,29 @@
-/* style this boy  */
 body {
   background-color: black;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
 }
+
 p {
   font-family: "Figtree";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
 }
+
 h1 {
-  padding: 20px;
   font-family: "Figtree";
   font-style: normal;
   font-weight: 800;
   font-size: 56px;
   text-align: center;
   font-size: clamp(3rem, 2.308vw + 2.379rem, 3.5rem);
+
+  padding: 20px;
 }
+
 h2 {
   font-family: "Figtree";
   font-style: normal;
@@ -32,31 +39,38 @@ header {
 .header {
   height: 80px;
   width: 100%;
+
   display: flex;
   align-items: center;
 }
+
 .header > img {
   height: 40px;
 }
 
 main {
   background: var(--bg-color);
-  padding: 0px max(calc(50% - 720px), 0px);
   color: white;
+
   display: flex;
   flex-direction: column;
   gap: 160px;
+  position: relative;
+  flex-grow: 1;
+
+  padding: 0px max(calc(50% - 720px), 0px);
   padding-top: 160px;
   padding-bottom: 160px;
-  position: relative;
 }
+
 #foto_section {
+  padding-left: clamp(16px, 5vw, 80px);
+  padding-right: clamp(16px, 5vw, 80px);
+
   display: flex;
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
-  padding-left: clamp(16px, 5vw, 80px);
-  padding-right: clamp(16px, 5vw, 80px);
 }
 
 .big_foto_mode {
@@ -70,23 +84,29 @@ main {
   display: flex;
   justify-content: center;
 }
+
 .bigImage img {
   height: 375px;
   max-width: 560px;
   object-fit: cover;
 }
+
 .img_info {
   height: 100px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 58px 64px 0 64px;
 }
+
 .back_forward {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
+
 .back_forward p {
   font-family: "Figtree";
   font-style: normal;
@@ -96,16 +116,18 @@ main {
 
 footer {
   background: var(--bg-color);
-  padding: 0 max(calc(50% - 720px), 0px);
   background-image: url(../assets/images/footer_bg.svg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
+
+  padding: 0 max(calc(50% - 720px), 0px);
 }
 
 .da_logo {
   height: 128px;
   width: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,6 +140,7 @@ footer {
 
 .da_logo p {
   color: rgba(150, 150, 150, 1);
+
   font-family: "Figtree";
   font-style: normal;
   font-weight: 400;
@@ -126,25 +149,21 @@ footer {
 }
 
 dialog {
-  margin: auto auto;
   color: white;
+  backdrop-filter: blur(10px);
+  background-color: var(--main-color);
+
   max-height: 700px;
   width: 700px;
   z-index: 20;
-  border-radius: 40px;
-  backdrop-filter: blur(10px);
-  background-color: var(--main-color);
-  border: none;
-  padding-bottom: 56px;
+
   scrollbar-width: none;
-  /* max-width: none;
-  max-height: none;
+  margin: auto auto;
+  padding-bottom: 56px;
   border: none;
-  height: 700px;
-  width: 700px; */
-  /* background: transparent;
-  backdrop-filter: blur(5px); */
+  border-radius: 40px;
 }
+
 dialog::backdrop {
   background: transparent;
   backdrop-filter: blur(5px);
@@ -155,6 +174,7 @@ dialog::backdrop {
     background: var(--main-color);
     padding: inherit;
   }
+
   .header {
     display: flex;
     justify-content: center;
@@ -165,6 +185,7 @@ dialog::backdrop {
     padding-top: 60px;
     padding-bottom: 60px;
   }
+
   .big_foto_mode {
     width: 100%;
   }
@@ -175,11 +196,14 @@ dialog::backdrop {
     object-fit: cover;
     margin: 7% auto;
   }
+
   .bigImage img {
     height: 360px;
     width: 100%;
     object-fit: cover;
+    padding: 0 15px;
   }
+
   .img_info {
     height: 100px;
     display: flex;
@@ -187,6 +211,7 @@ dialog::backdrop {
     align-items: center;
     padding: 5% 7% 0 7%;
   }
+
   dialog {
     margin-top: 16px;
     width: 100%;

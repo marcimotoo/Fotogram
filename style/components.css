@@ -1,84 +1,78 @@
-/* components  */
+button:hover {
+  cursor: pointer;
+}
+
 .imgButton {
-  appearance: none;
   height: 150px;
   width: 150px;
 
   border-radius: 16px;
   border-width: 0px;
+
+  appearance: none;
   position: relative;
 }
+
 .imgButton img {
   height: 150px;
   width: 150px;
   object-fit: cover;
+
+  margin-bottom: 48px;
   border-radius: 16px;
   border: 2px solid rgba(18, 70, 88, 1);
-  margin-bottom: 48px;
 }
+
 .imgButton > img:hover {
   border: 2px solid var(--hover-color);
 }
+
 .close_button {
-  appearance: none;
   height: 32px;
   width: 32px;
+
+  color: white;
+  background: none;
+
   border-radius: 50%;
   border-width: 0px;
-  background: none;
-  color: white;
   font-size: 16px;
-  /* appearance: none; */
-  /* color: white; */
-  /* background: var(--main-color); */
-  /* background:; */
+
+  appearance: none;
   position: relative;
 }
+
 .close_button img,
 .close_button img:hover {
-  border: none;
-
   height: 16px;
   width: 16px;
+  object-fit: inherit;
+
   position: absolute;
   left: 8px;
   top: 8px;
-  object-fit: inherit;
+  border: none;
 }
 
 .close_button:hover {
   background: var(--button-hover);
 }
+
 .close_button:active {
   background: var(--button-press);
 }
 
 .arrow_button {
-  appearance: none;
   height: 60px;
   width: 60px;
+
   background: var(--arrow-button);
+
   border-radius: 50%;
   border-width: 0px;
-  position: relative;
 
-  /* text-rendering: auto;
-  color: buttontext;
-  letter-spacing: normal;
-  word-spacing: normal;
-  line-height: normal;
-  text-transform: none;
-  text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
-  text-align: center;
-  cursor: default;
-  box-sizing: border-box;
-  padding-block: 1px;
-  padding-inline: 6px;
-  border-style: outset;
-  border-color: buttonborder;
-  border-image: none; */
+  appearance: none;
+  position: relative;
 }
 
 .arrow_button:hover {
@@ -87,11 +81,12 @@
 
 .arrow_button img,
 .arrow_button img:hover {
-  position: absolute;
   height: 20px;
   width: 20px;
+
   left: 20px;
   top: 20px;
   border: none;
   object-fit: inherit;
+  position: absolute;
 }
