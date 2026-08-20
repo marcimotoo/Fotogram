@@ -9,12 +9,19 @@ p {
   font-size: 24px;
 }
 h1 {
+  padding: 20px;
   font-family: "Figtree";
   font-style: normal;
   font-weight: 800;
   font-size: 56px;
   text-align: center;
   font-size: clamp(3rem, 2.308vw + 2.379rem, 3.5rem);
+}
+h2 {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
 }
 
 header {
@@ -28,7 +35,7 @@ header {
   display: flex;
   align-items: center;
 }
-.header img {
+.header > img {
   height: 40px;
 }
 
@@ -48,19 +55,8 @@ main {
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
-  padding: 0 145px;
-}
-#foto_section > img {
-  height: 150px;
-  width: 150px;
-  object-fit: cover;
-  border-radius: 16px;
-  border: 2px solid rgba(18, 70, 88, 1);
-  transition: all 160ms ease-in-out;
-  margin-bottom: 48px;
-}
-#foto_section > img:hover {
-  border: 2px solid var(--hover-color);
+  padding-left: clamp(16px, 5vw, 80px);
+  padding-right: clamp(16px, 5vw, 80px);
 }
 
 .big_foto_mode {
@@ -75,13 +71,18 @@ main {
   background-color: var(--main-color);
   padding-bottom: 56px;
 }
-.big_foto_mode > img {
-  height: 560px;
-  max-width: 100%;
-  object-fit: cover;
-  margin: 0 auto;
 
-  padding: 48px 64px;
+.bigImage {
+  height: auto;
+  max-width: 560px;
+  object-fit: cover;
+  margin: 7% auto;
+  box-shadow: 8px 8px 32px 8px rgb(28 28 28);
+
+  margin: 48px 64px;
+}
+.bigImage img {
+  width: 100%;
 }
 .img_info {
   height: 100px;
@@ -109,11 +110,6 @@ footer {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-}
-@media screen and (max-width: 800px) {
-  footer {
-    background-image: url(../assets/images/footer_bg_mobile.svg);
-  }
 }
 
 .da_logo {
@@ -151,4 +147,35 @@ dialog[open] {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    background: var(--main-color);
+    padding: inherit;
+  }
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+
+  main {
+    gap: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .big_foto_mode {
+    width: 90%;
+  }
+
+  .bigImage {
+    height: auto;
+    max-width: 90%;
+    object-fit: cover;
+    margin: 7% auto;
+    box-shadow: 8px 8px 32px 8px rgb(28 28 28);
+  }
+  footer {
+    background-image: url(../assets/images/footer_bg_mobile.svg);
+  }
 }
