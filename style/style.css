@@ -77,18 +77,12 @@ main {
   color: white;
 }
 
-.bigImage {
-  margin: 7% auto;
-
-  margin: 48px 64px;
-  display: flex;
-  justify-content: center;
-}
-
 .bigImage img {
-  height: 375px;
-  max-width: 560px;
+  max-height: 60vh;
+  width: 100%;
   object-fit: cover;
+
+  padding: 48px clamp(16px, 5vw, 64px);
 }
 
 .img_info {
@@ -153,7 +147,6 @@ dialog {
   backdrop-filter: blur(10px);
   background-color: var(--main-color);
 
-  max-height: 700px;
   width: 700px;
   z-index: 20;
 
@@ -190,18 +183,9 @@ dialog::backdrop {
     width: 100%;
   }
 
-  .bigImage {
-    height: 100%;
-    max-width: 100%;
-    object-fit: cover;
-    margin: 7% auto;
-  }
-
   .bigImage img {
-    height: 360px;
     width: 100%;
     object-fit: cover;
-    padding: 0 15px;
   }
 
   .img_info {
@@ -213,8 +197,7 @@ dialog::backdrop {
   }
 
   dialog {
-    margin-top: 16px;
-    width: 100%;
+    width: inherit;
     padding-bottom: 5%;
   }
 

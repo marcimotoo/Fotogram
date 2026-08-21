@@ -87,7 +87,7 @@ function getBigPictureTemplate(i) {
       <button onclick="backButton(${i})" class="arrow_button">
         <img src="./assets/icons/left.svg" alt="left button arrow" />
       </button>
-      <p>${i + 1}/12</p>
+      <p>${i + 1}/${imgObjects.length}</p>
       <button onclick="fowardButton(${i})" class="arrow_button">
         <img src="./assets/icons/right.svg" alt="right button arrow" />
       </button>
